@@ -15,14 +15,15 @@ Samples of stopwords.txt
 Sample of charset conversion
 
 Scripts to start, stop, restart, get status, 
-* with inetd
 * manually
+* with inetd
+
 
 Scripts to parse logs
 
 to make simple text reports
 to mail
-to  send event to  monitorings
+to send event to  monitorings
 
 
 
