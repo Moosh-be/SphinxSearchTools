@@ -1,0 +1,11 @@
+#!/bin/sh
+
+
+CONFIGFILE=/etc/sphinxsearch/sphinx.conf
+
+grep -e '^index ' $CONFIGFILE
+grep -e '^source ' $CONFIGFILE
+grep -e '^path ' $CONFIGFILE
+
+
+
