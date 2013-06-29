@@ -367,11 +367,14 @@ class Search_Sphinx_Query {
      * @return the $rankMode
      */
     public function getRankMode() {
-        assert(
-                        in_array($this->rankMode,
-                                        array(self::SPH_RANK_BM25, self::SPH_RANK_NONE, self::SPH_RANK_PROXIMITY_BM25,
-                                                        self::SPH_RANK_PROXIMITY, self::SPH_RANK_FIELDMASK, self::SPH_RANK_MATCHANY,
-                                                        self::SPH_RANK_SPH04, self::SPH_RANK_WORDCOUNT)));
+        assert( in_array($this->rankMode, array( self::SPH_RANK_BM25,
+                                                 self::SPH_RANK_NONE,
+                                                 self::SPH_RANK_PROXIMITY_BM25,
+                                                 self::SPH_RANK_PROXIMITY,
+                                                 self::SPH_RANK_FIELDMASK,
+                                                 self::SPH_RANK_MATCHANY,
+                                                 self::SPH_RANK_SPH04,
+                                                 self::SPH_RANK_WORDCOUNT)));
         return $this->rankMode;
     }
 
@@ -379,11 +382,14 @@ class Search_Sphinx_Query {
      * @param string $rankMode
      */
     public function setRankMode($rankMode = self::SPH_RANK_PROXIMITY_BM25) {
-        assert(
-                        in_array($rankMode,
-                                        array(self::SPH_RANK_BM25, self::SPH_RANK_NONE, self::SPH_RANK_PROXIMITY_BM25,
-                                                        self::SPH_RANK_PROXIMITY, self::SPH_RANK_FIELDMASK, self::SPH_RANK_MATCHANY,
-                                                        self::SPH_RANK_SPH04, self::SPH_RANK_WORDCOUNT)));
+        assert( in_array($rankMode, array( self::SPH_RANK_BM25,
+                                           self::SPH_RANK_NONE,
+                                           self::SPH_RANK_PROXIMITY_BM25,
+                                           self::SPH_RANK_PROXIMITY,
+                                           self::SPH_RANK_FIELDMASK,
+                                           self::SPH_RANK_MATCHANY,
+                                           self::SPH_RANK_SPH04,
+                                           self::SPH_RANK_WORDCOUNT)));
         $this->rankMode = $rankMode;
         return $this;
     }
@@ -1049,7 +1055,7 @@ class Search_Sphinx_Query {
     //            |  __/  __/ (__| |  _   _   ___) | |_) | | | | | | | |>  <
     //            |_|   \___|\___|_| (_) (_) |____/| .__/|_| |_|_|_| |_/_/\_\
     //                                             |_|
-    /*
+
            public function fetch() {
 
                 if (!class_exists('SphinxClient')) {
@@ -1076,8 +1082,8 @@ class Search_Sphinx_Query {
                 $s->setMaxQueryTime ( $this->$_maxquerytime );
     //            $s->setRetries ( int $this->retriesCount , int $this->retriesDelay  );
     //
-    //            $s->setMatchMode($this->searchMode);
-    //            $s->setFieldWeights ( array $weights );
+                $s->setMatchMode($this->searchMode);
+                $s->setFieldWeights ( $this->_fieldweights );
     //            $s->setFilter ( string $attribute , array $values [, bool $exclude = false ] );
     //            $s->setFilterFloatRange ( string $attribute , float $min , float $max [, bool $exclude = false ] );
     //            $s->setFilterRange ( string $attribute , int $min , int $max [, bool $exclude = false ] );
@@ -1085,16 +1091,16 @@ class Search_Sphinx_Query {
     //            $s->setGroupBy ( string $attribute , int $func [, string $groupsort = "@group desc" ] );
     //            $s->setGroupDistinct ( string $attribute );
     //            $s->setIDRange ( int $min , int $max );
-    //            $s->setIndexWeights ( array $weights );
+                  $s->setIndexWeights ( $this->_arrIndexweights );
     //            $s->setLimits ( int $offset , int $limit [, int $max_matches = 0 [, int $cutoff = 0 ]] );
-    //            $s->setMatchMode ( int $mode );
+                $s->setMatchMode ( $this->searchMode);
     //            $s->setOverride ( string $attribute , int $type , array $values );
-    //            $s->setRankingMode ( int $ranker );
+                  $s->setRankingMode ( $this->rankMode );
     //            $s->setSelect ( string $clause );
     //            $s->setSortMode ( int $mode [, string $sortby ] );
                 return $s->query($this->_query);
            }
-     */
+
 
     function __toString() {
         return $this->getQuery();
